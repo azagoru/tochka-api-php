@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services\TochkaApi;
+namespace Azagoru\TochkaApiPHPWrapper;
 
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception\ClientException;
@@ -89,10 +89,3 @@ class Request extends GuzzleClient
 
 
 }
-
-// ссылка для получения authorization_code, вводится вручную в браузер, после — авторизация в ЛК,
-// далее выбор опций и редирект с получением кода
-// код действует 2 минуты, используем для получения токенов
-// https://enter.tochka.com/api/v1/authorize?response_type=code&client_id=CqV56y5dAytMOjR5JgRMkXORIvmiN8oj
-
-// {"refresh_token":"EvEo4QXZBjasaKdQ4DHXDozeYCHBlz3T","token_type":"bearer","access_token":"tKZ5HpiRLIU09VRRgbZELEaYcWLKFw01","expires_in":86400}

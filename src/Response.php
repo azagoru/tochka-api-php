@@ -1,17 +1,6 @@
 <?php
-/**
- * PHP version 5
- *
- * This is the Mailjet Response
- *
- * @category Mailjet_API
- * @package  Mailjet-apiv3
- * @author   Guillaume Badi <gbadi@mailjet.com>
- * @license  https://opensource.org/licenses/MIT
- * @link     dev.mailjet.com
- */
 
-namespace App\Services\TochkaApi;
+namespace Azagoru\TochkaApiPHPWrapper;
 use Psr\Http\Message\ResponseInterface;
 
 class Response
@@ -21,11 +10,6 @@ class Response
     private $body;
     private $rawResponse;
 
-    /**
-     * Construct a Tochka response
-     * @param Request        $request  Tochka actual request
-     * @param ResponseInterface $response Guzzle response
-     */
     public function __construct($request, $response)
     {
         $this->request = $request;
@@ -38,31 +22,16 @@ class Response
         }
     }
 
-    /**
-     * Status Getter
-     * return the http status code
-     * @return int status
-     */
     public function getStatus()
     {
         return $this->status;
     }
 
-    /**
-     * Status Getter
-     * return the entire response array
-     * @return array
-     */
     public function getBody()
     {
         return $this->body;
     }
 
-    /**
-     * Data Getter
-     * The data returned by the mailjet call
-     * @return array data
-     */
     public function getData()
     {
         if (isset($this->body['Data'])) {
@@ -72,11 +41,6 @@ class Response
         return $this->body;
     }
 
-    /**
-     * Count getter
-     * return the resulting array size
-     * @return null|int
-     */
     public function getCount()
     {
         if (isset($this->body['Count'])) {
@@ -86,21 +50,11 @@ class Response
         return null;
     }
 
-    /**
-     * Error Reason getter
-     * return the resulting error message
-     * @return null|string
-     */
     public function getReasonPhrase()
     {
         return $this->rawResponse->getReasonPhrase();
     }
 
-    /**
-     * Total getter
-     * return the total count of all results
-     * @return int count
-     */
     public function getTotal()
     {
         if (isset($this->body['Total'])) {
@@ -110,24 +64,11 @@ class Response
         return null;
     }
 
-    /**
-     * Success getter
-     * @return boolean true is return code is 2**
-     */
     public function success()
     {
         return $this->success;
     }
 
-    /**
-     * From http://stackoverflow.com/questions/19520487/json-bigint-as-string-removed-in-php-5-5
-     *
-     * Decodes a mailjet string response to an object reprensenting that response
-     *
-     * @param string    $body   The mailjet response as string
-     *
-     * @return object           Object representing the mailjet response
-     */
     protected function decodeBody($body)
     {
         if (version_compare(PHP_VERSION, '5.4.0', '>=') && !(defined('JSON_C_VERSION') && PHP_INT_SIZE > 4)) {
