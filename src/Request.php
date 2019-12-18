@@ -1,6 +1,6 @@
 <?php
 
-namespace Azagoru\TochkaApiPHPWrapper;
+namespace Azagoru\TochkaApiPHP;
 
 use GuzzleHttp\Client as GuzzleClient;
 use GuzzleHttp\Exception\ClientException;

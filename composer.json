@@ -1,0 +1,26 @@
+{
+  "name": "azagoru/tochka-api-php",
+  "description": "PHP wrapper for the Tochka bank API",
+  "keywords": ["tochka", "api", "php"],
+  "homepage": "https://github.com/azagoru/tochka-api-php/",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Andrey Zagoruyko",
+      "email": "andrey@azartel.ru"
+    }
+  ],
+  "require": {
+    "php": ">=7.0.0",
+    "guzzlehttp/guzzle": "~6.0|~5.3"
+  },
+  "require-dev": {
+    "phpunit/phpunit": "^4.8",
+    "php-coveralls/php-coveralls": "^1.0"
+  },
+  "autoload": {
+    "psr-0": {
+      "Azagoru": "src/"
+    }
+  }
+}

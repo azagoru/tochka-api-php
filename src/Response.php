@@ -1,6 +1,6 @@
 <?php
 
-namespace Azagoru\TochkaApiPHPWrapper;
+namespace Azagoru\TochkaApiPHP;
 use Psr\Http\Message\ResponseInterface;
 
 class Response

@@ -1,6 +1,6 @@
 <?php
 
-namespace Azagoru\TochkaApiPHPWrapper;
+namespace Azagoru\TochkaApiPHP;
 
 class Config
 {
