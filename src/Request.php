@@ -13,6 +13,13 @@ class Request extends GuzzleClient
     private $params;
     private $auth;
 
+    /**
+     * Build a new Http request
+     * @param array  $auth    [apikey, apisecret]
+     * @param string $method  http method
+     * @param string $url     call url
+     * @param array $params
+     */
     public function __construct($url, $method, $params, $auth = [])
     {
         parent::__construct(['defaults' => [
@@ -61,8 +68,6 @@ class Request extends GuzzleClient
         return new Response($this, $response);
     }
 
-    
-
     /**
      * Http method getter
      * @return string Request method
@@ -81,7 +86,7 @@ class Request extends GuzzleClient
 
     /**
      * Call Params getter
-     * @return string Request Url
+     * @return array Request Url
      */
     public function getParams() {
         return $this->params;
